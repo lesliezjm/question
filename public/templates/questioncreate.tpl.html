@@ -1,65 +1,66 @@
-<div class="container">
-    <div class="row mt-10">
-        <ol class="breadcrumb">
-            <li><a href="#/questions">问答</a></li>
-            <li class="active">发起提问</li>
-        </ol>
-        <form id="questionForm" method="POST" role="form"  ng-submit="questionCreate()">
-            <input type="hidden" id="editor_token" name="_token" value="P7N3KhfFb4xZslpAr0B865JG9MTtGWA05FL82IPU">
-            <input type="hidden" id="tags" name="tags" value="123,123123,java">
-            <input type="hidden" name="to_user_id" ng-model="question.user_id" value="0">
-            <div class="form-group">
-                <label for="title"> 请将您的问题告诉我们  :</label>
-                <input id="title" ng-model="question.title" type="text" name="title" class="form-control input-lg" placeholder="请在这里概述您的问题" value="">
-            </div>
+<div class="row mt-10">
+    <ol class="breadcrumb">
+        <li><a href="#/questions">问答</a></li>
+        <li class="active">发起提问</li>
+    </ol>
+    <form id="questionForm" method="POST" role="form" ng-submit="questionCreate()">
+        <input type="hidden" id="editor_token" name="_token" value="P7N3KhfFb4xZslpAr0B865JG9MTtGWA05FL82IPU">
+        <input type="hidden" id="tags" name="tags" value="123,123123,java">
+        <input type="hidden" name="to_user_id" ng-model="question.user_id" value="0">
+        <div class="form-group">
+            <label for="title"> 请将您的问题告诉我们 :</label>
+            <input id="title" ng-model="question.title" type="text" name="title" class="form-control input-lg"
+                   placeholder="请在这里概述您的问题" value="">
+        </div>
 
-            <div id="titleSuggest" class="panel hide widget-suggest panel-default">
-                <div class="panel-body">
-                    <p>
-                        <strong>这些问题可能有你需要的答案</strong>
-                        <button type="button" class="widget-suggest-close btn btn-default btn-xs ml-10">关闭提示</button>
-                    </p>
-                    <ul id="suggest-list" class="list-unstyled widget-suggest-list"></ul>
-                </div>
+        <div id="titleSuggest" class="panel hide widget-suggest panel-default">
+            <div class="panel-body">
+                <p>
+                    <strong>这些问题可能有你需要的答案</strong>
+                    <button type="button" class="widget-suggest-close btn btn-default btn-xs ml-10">关闭提示</button>
+                </p>
+                <ul id="suggest-list" class="list-unstyled widget-suggest-list"></ul>
             </div>
-            <div class="form-group  ">
-                <label>问题描述(选填)</label>
-                <summernote id="question_editor" placeholder="您可以继续在这里补充问题细节" focus lang="zh-CN" ng-model="question.content" config="options"><span>您可以继续在这里补充问题细节.</span></summernote>
-            </div>
+        </div>
+        <div class="form-group  ">
+            <label>问题描述(选填)</label>
+            <summernote id="question_editor" placeholder="您可以继续在这里补充问题细节" focus lang="zh-CN" ng-model="question.content"
+                        config="options"><span>您可以继续在这里补充问题细节.</span></summernote>
+        </div>
 
-            <div class="form-group">
-                <label for="select_tags">添加话题</label>
-                <select id="select_tags" name="select_tags" class="form-control" ng-model="question.cname" multiple="multiple"  ng-options="item.name as item.name for item in categoryList">
-                </select>
+        <div class="form-group">
+            <label for="select_tags">添加话题</label>
+            <select id="select_tags" name="select_tags" class="form-control" ng-model="question.cname"
+                    multiple="multiple" ng-options="item.name as item.name for item in categoryList">
+            </select>
+        </div>
+        <div class="row mt-20">
+            <!-- <div class="col-md-8">
+                 <div class="checkbox pull-left">
+                     悬赏
+                     <select name="price">
+                         <option selected="selected" value="0">0</option><option value="3">3</option><option value="5">5</option><option value="10">10</option><option value="15">15</option><option value="30">30</option><option value="50">50</option><option value="80">80</option><option value="100">100</option>
+                     </select> 金币
+                     <span class="span-line">|</span>
+                     <label>
+                         <input type="checkbox" name="hide" value="1"> 匿名
+                     </label>
+                 </div>
+             </div>-->
+            <div class="col-md-4 col-md-offset-8">
+                <input type="hidden" id="question_editor_content" name="description" value="">
+                <button type="submit" class="btn btn-primary pull-right">发布问题</button>
             </div>
-            <div class="row mt-20">
-               <!-- <div class="col-md-8">
-                    <div class="checkbox pull-left">
-                        悬赏
-                        <select name="price">
-                            <option selected="selected" value="0">0</option><option value="3">3</option><option value="5">5</option><option value="10">10</option><option value="15">15</option><option value="30">30</option><option value="50">50</option><option value="80">80</option><option value="100">100</option>
-                        </select> 金币
-                        <span class="span-line">|</span>
-                        <label>
-                            <input type="checkbox" name="hide" value="1"> 匿名
-                        </label>
-                    </div>
-                </div>-->
-                <div class="col-md-4 col-md-offset-8">
-                    <input type="hidden" id="question_editor_content" name="description" value="">
-                    <button type="submit" class="btn btn-primary pull-right">发布问题</button>
-                </div>
-            </div>
-        </form>
-    </div>
-
+        </div>
+    </form>
 </div>
+
 
 <script type="text/javascript">
     $("#select_tags").select2({
         placeholder: "话题越精准，越容易让相关领域专业人士看到你的内容",
-        minimumInputLength:1,
-        maximumInputLength:10,
+        minimumInputLength: 1,
+        maximumInputLength: 10,
 //        ajax:{
 //            type:'post',
 //            url: '/ajax/loadTags',
@@ -77,7 +78,7 @@
 //                },
 //                cache: true
 //        },
-        tags:true
+        tags: true
     });
     $("#select_tags").change(function () {
         $("#tags").val($("#select_tags").val());

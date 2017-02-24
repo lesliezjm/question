@@ -38,7 +38,7 @@
                     {{item.answer_num}}<small> 回答 </small>
                 </div>
                 <div class="views hidden-xs">
-                    96<small>浏览</small>
+                    {{item.pv||0}}<small>浏览</small>
                 </div>
             </div>
             <div class="summary">
@@ -53,7 +53,7 @@
                     <a href="/question/{{item._id}}">{{item.title}}</a>
                 </h2>
                 <ul class="taglist-inline ib">
-                    <li class="tagPopup"><a class="tag" target="_blank" href="/topic/{{item.cname}}">{{item.cname}}</a></li>
+                    <li class="tagPopup" ng-repeat="tag in item.cname"><a class="tag" target="_blank" href="/topic/{{tag}}">{{tag}}</a></li>
                 </ul>
             </div>
         </section>
@@ -64,3 +64,5 @@
         <ul class="pagination"><li class="disabled"><span>«</span></li> <li class="active"><span>1</span></li><li><a href="#/questions?page=2">2</a></li><li><a href="#/questions?page=3">3</a></li><li><a href="#/questions?page=4">4</a></li><li><a href="#/questions?page=5">5</a></li><li><a href="#/questions?page=6">6</a></li><li><a href="#/questions?page=7">7</a></li><li><a href="#/questions?page=8">8</a></li><li class="disabled"><span>...</span></li><li><a href="#/questions?page=51">51</a></li><li><a href="#/questions?page=52">52</a></li> <li><a href="#/questions?page=2" rel="next">»</a></li></ul>
     </div>
 </div>
+
+<div  class="col-xs-12 col-md-3 side" ng-include="'./templates/side.html'"></div>
