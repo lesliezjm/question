@@ -1,0 +1,221 @@
+<div class="container">
+    <div class="row mt-10">
+        <div class="col-xs-12 col-md-9 main">
+            <div class="widget-question">
+                <h4 class="title">
+                    {{question.title}}
+                </h4>
+                <ul class="taglist-inline">
+                    <li class="tagPopup"><a class="tag" href="#/topic/%E8%BF%90%E7%BB%B4">运维</a></li>
+                </ul>
+                <div class="description mt-10">
+                    <div class="text-fmt " ng-bind-html="question.content">
+
+                    </div>
+
+                    <div class="post-opt mt-10">
+                        <ul class="list-inline">
+                            <li><a class="comments" data-toggle="collapse" href="#comments-question-1064" aria-expanded="false" aria-controls="comment-1064"><i class="fa fa-comment-o"></i> 0 条评论</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="collapse widget-comments mb-20" id="comments-question-1064" data-source_type="question" data-source_id="1064">
+                        <div class="widget-comment-list"></div>
+                        <div class="widget-comment-form row">
+                            <form class="col-md-12">
+                                <div class="form-group">
+                                    <textarea name="content" placeholder="写下你的评论" class="form-control" id="comment-question-content-1064"></textarea>
+                                </div>
+                            </form>
+                            <div class="col-md-12 text-right">
+                                <a href="#" class="text-muted collapse-cancel" data-collapse_id="comments-question-1064">取消</a>
+                                <button type="submit" class="btn btn-primary btn-sm ml-10 comment-btn" id="question-comment-1064-btn" data-token="P7N3KhfFb4xZslpAr0B865JG9MTtGWA05FL82IPU" data-source_id="1064" data-source_type="question" data-to_user_id="0">提交评论</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="widget-answers mt-15">
+                <div class="btn-group pull-right" role="group">
+                    <a href="#/question/1064" class="btn btn-default btn-xs  active ">默认排序</a>
+                    <a href="#/question/1064?sort=created_at" id="sortby-created" class="btn btn-default btn-xs ">时间排序</a>
+                </div>
+
+                <h2 class="h4 post-title"> {{question.answer_num}} 个回答</h2>
+
+                <div class="media" ng-repeat="answer in answerlist">
+                    <div class="media-left">
+                        <a href="#/people/5" class="avatar-link user-card" target="_blank">
+                            <img class="avatar-40" src="/img/avatar/55_middle.jpg" alt="{{answer.truename}}"></a>
+
+                    </div>
+                    <div class="media-body">
+                        <div class="media-heading">
+                            <strong>
+                                <a href="#/people/5" class="mr-5 user-card">{{answer.user_id.truename}}</a><span class="text-gold">                                </span>
+                            </strong>
+                            <span class="answer-time text-muted hidden-xs">{{answer.created_at|date:'yyyy-MM-dd HH:mm'}}</span>
+                        </div>
+                        <div class="content" ng-bind-html="answer.content|trustHtml">
+                        </div>
+                        <div class="media-footer">
+                            <ul class="list-inline mb-20">
+                                <li><a class="comments" data-toggle="collapse" href="#comments-answer-1056" aria-expanded="false" aria-controls="comment-1056"><i class="fa fa-comment-o"></i> 0 条评论</a></li>
+                                <li class="pull-right">
+                                    <button class="btn btn-sm btn-support btn-success" data-source_id="1056" data-source_type="answer" data-support_num="0"><i class="fa fa-thumbs-o-up"></i> 赞同</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="collapse widget-comments mb-20" id="comments-answer-1056" data-source_type="answer" data-source_id="1056">
+                            <div class="widget-comment-list"></div>
+                            <div class="widget-comment-form row">
+                                <form class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea name="content" placeholder="写下你的评论" class="form-control" id="comment-answer-content-1056"></textarea>
+
+                                    </div>
+                                </form>
+                                <div class="col-md-12 text-right">
+                                    <a href="#" class="text-muted collapse-cancel" data-collapse_id="comments-answer-1056">取消</a>
+                                    <button type="submit" class="btn btn-primary btn-sm ml-10 comment-btn" id="answer-comment-1056-btn" data-token="P7N3KhfFb4xZslpAr0B865JG9MTtGWA05FL82IPU" data-source_id="1056" data-source_type="answer" data-to_user_id="0">提交评论</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+
+                </div>
+
+            </div>
+            <div class="widget-answer-form mt-15">
+
+                <form name="answerForm" id="answer_form" ng-submit="answerCreate()" class="editor-wrap">
+                    <input type="hidden" id="answer_token" name="_token" value="P7N3KhfFb4xZslpAr0B865JG9MTtGWA05FL82IPU">
+                    <input type="hidden" value="1064" id="question_id" name="question_id">
+                    <div class="form-group  ">
+                        <summernote placeholder="撰写答案" focus lang="zh-CN" ng-model="answer.content" config="options"><span>撰写答案</span></summernote>
+                    </div>
+
+                    <div id="answerSubmit" class="mt-15 clearfix">
+                        <div class="checkbox pull-left">
+                            <label><input type="checkbox" id="attendTo" name="followed" value="1" checked="">关注该问题</label>
+                        </div>
+                        <div class="pull-right">
+                            <input type="hidden" id="answer_editor_content" name="content" value="<p><br></p>">
+                            <button type="submit" class="btn btn-primary pull-right">提交回答</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="col-xs-12 col-md-3 side">
+            <div class="widget-box">
+                <ul class="widget-action list-unstyled">
+                    <li>
+                        <button type="button" id="follow-button" class="btn btn-success btn-sm" data-source_type="question" data-source_id="1064" data-show_num="true" data-toggle="tooltip" data-placement="right" title="" data-original-title="关注后将获得更新提醒">关注</button>
+                        <strong id="follower-num">1</strong> 关注
+                    </li>
+                    <li>
+                        <button id="collect-button" class="btn btn-default btn-sm" data-source_type="question" data-source_id="1064"> 收藏</button>
+                        <strong id="collection-num">0</strong> 收藏，<strong class="no-stress">107</strong> 浏览
+                    </li>
+                    <li>
+                        <i class="fa fa-clock-o"></i>
+                        <a href="#/people/8" target="_blank">柯南@￥</a>
+                        提出于 2017-01-05 15:46</li>
+                </ul>
+            </div>
+            <div class="widget-box">
+                <h2 class="h4 widget-box__title">相似问题</h2>
+                <ul class="widget-links list-unstyled list-text">
+                    <li class="widget-links-item">
+                        <a title="Permission denied (publickey,gssapi-keyex,gssapi-with-mic)" href="#/question/1015">Permission denied (publickey,gssapi-keyex,gssapi-with-mic)</a>
+                        <small class="text-muted">1 回答</small>
+                    </li>
+                    <li class="widget-links-item">
+                        <a title="我在ssh配置了免密码登录，但是登录时提示还需要密码" href="#/question/1014">我在ssh配置了免密码登录，但是登录时提示还需要密码</a>
+                        <small class="text-muted">1 回答</small>
+                    </li>
+                    <li class="widget-links-item">
+                        <a title="500 OOPS: cannot change directory:/home/" href="#/question/1004">500 OOPS: cannot change directory:/home/</a>
+                        <small class="text-muted">1 回答</small>
+                    </li>
+                    <li class="widget-links-item">
+                        <a title="vmvare安装centos6.x后虚拟机网络设置问题" href="#/question/1000">vmvare安装centos6.x后虚拟机网络设置问题</a>
+                        <small class="text-muted">1 回答</small>
+                    </li>
+                    <li class="widget-links-item">
+                        <a title="centos下yum命令" href="#/question/968">centos下yum命令</a>
+                        <small class="text-muted">1 回答</small>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="appendReward" tabindex="-1" role="dialog" aria-labelledby="appendRewardLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="appendModalLabel">追加悬赏</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-success" role="alert" id="rewardAlert">
+                        <i class="fa fa-exclamation-circle"></i> 提高悬赏，以提高问题的关注度！
+                    </div>
+
+                    <form class="form-inline" id="rewardForm" action="#/question/1064/appendReward" method="post">
+                        <input type="hidden" name="_token" value="P7N3KhfFb4xZslpAr0B865JG9MTtGWA05FL82IPU">
+                        <div class="form-group">
+                            <label for="reward">追加</label>
+                            <select class="form-control" name="coins" id="question_coins">
+                                <option value="3" selected="">3</option><option value="5">5</option><option value="10">10</option><option value="15">15</option><option value="30">30</option><option value="50">50</option><option value="80">80</option><option value="100">100</option>
+                            </select> 个金币
+                        </div>
+                        <div class="form-group">
+                            （您目前共有 <span class="text-gold">1</span> 个金币）
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="appendRewardSubmit">确认追加</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="adoptAnswer" tabindex="-1" role="dialog" aria-labelledby="adoptAnswerLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="adoptModalLabel">采纳回答</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning" role="alert" id="adoptAnswerAlert">
+                        <i class="fa fa-exclamation-circle"></i> 确认采纳该回答为最佳答案？
+                    </div>
+                    <blockquote id="answer_quote"></blockquote>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="adoptAnswerSubmit">采纳该回答</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .content a{text-decoration:underline;}
+    .text-fmt a{text-decoration:underline;}
+</style>

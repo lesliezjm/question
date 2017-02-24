@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="summernoteDemo">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./static/components/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="./static/components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="./static/components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <link rel="stylesheet" href="./static/components/summernote/dist/summernote.css">
+    <script src="./static/components/summernote/dist/summernote.js"></script>
+    <script src="./static/components/summernote/lang/summernote-zh-CN.js"></script>
+    <script src="./static/components/angular/angular.js"></script>
+    <script src="./static/components/angular-summernote/dist/angular-summernote.js"></script>
+</head>
+<body>
+
+<div class="" ng-controller="OptCtrl">
+    <div class="summernote-container">
+        <div class="summernotes">
+            <summernote config="options"></summernote>
+        </div>
+        <input class="btn bg-blue full-width" type="submit" id="append" style="margin-top: 15px;" value="Add 1+ Editor" add-summernote>
+    </div>
+</div>
+
+<script>
+    angular.module('summernoteDemo', ['summernote'])
+        .directive('addSummernote', function ($compile) {
+            var template = '<summernote config="options" on-image-upload="imageUpload(files, editor, welEditable);"></summernote>';
+            return function (scope, element, attrs) {
+                element.click(function () {
+                    var elm = angular.element(template);
+                    element.parent().find(".summernotes").append(elm);
+                    $compile(elm)(scope);
+                })
+            }
+        })
+        .controller('OptCtrl', function ($scope) {
+
+            $scope.options = {
+                height: 150,
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['height', ['height']]
+                ]
+            };
+
+            $scope.add_editor = function () {
+                console.log("Adding editor!");
+            }
+        })
+</script>
+</body>
+</html>

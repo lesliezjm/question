@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-cn" ng-app="myApp">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>问答网站</title>
+    <meta name="keywords" content="问答网站">
+    <meta name="description" content="程序员，为代码而生！大神问答，为程序员而生！">
+    <link rel="stylesheet" href="./static/components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./static/components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./css/global.css">
+
+</head>
+<body>
+<div class="top-common-nav mb-50">
+    <div class="navbar-default navbar-fixed-top">
+        <nav class="navbar" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" ui-sref="index">程序猿问答</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a ui-sref="index">首页</a></li>
+                        <li><a ui-sref="question({name:'',id:''})">问答</a></li>
+                        <li><a ui-sref="topics">话题</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right " ng-show="!is_login">
+                        <li><a href="login.html" target="_self">登录</a></li>
+                        <li><a href="register.html" target="_self">注册</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav user-menu navbar-right" ng-show="is_login">
+                        <li><a href="#/notifications" class="active" id="unread_notifications"><span class="fa fa-bell-o fa-lg"></span></a></li>
+                        <li><a href="#/messages" class="active" id="unread_messages"><span class="fa fa-envelope-o fa-lg"></span></a></li>
+                        <li class="dropdown user-avatar">
+                            <a href="#/profile/base" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <img class="avatar-32 mr-5" alt="Leslie" src="/img/avatar/55_middle.jpg">
+                                <span ng-bind="user.truename"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#/people/55">我的主页</a></li>
+                                <li><a href="#/notifications">我的私信</a></li>
+                                <li><a href="#/profile/base">账号设置</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#" ng-click="logout()">退出</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-right" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <span class="input-group-addon btn"><span id="search-button" class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+                        </div>
+                    </form>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="navbar-inverse">
+            <div class="container">
+                <ul class="nav navbar-nav navtags taglist-inline">
+                    <li ng-repeat="item in categoryList"><a ui-sref="question({name: item.name, id:''})" ng-bind="item.name"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="top-alert mt-90 clearfix text-center">
+    <!--[if lt IE 9]>
+    <div class="alert alert-danger topframe" role="alert">你的浏览器实在<strong>太太太太太太旧了</strong>，放学别走，升级完浏览器再说
+        <a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a>
+    </div>
+    <![endif]-->
+</div>
+<div class="wrap">
+    <div class="container">
+        <div class="col-xs-12 col-md-9 main" ui-view="mainView"></div>
+        <div class="col-xs-12 col-md-3 side" ng-show="sideShow">
+            <div class="side-alert alert alert-link">
+                <a ui-sref="questioncreate" class="btn btn-warning btn-block">我要提问</a>
+                <a href="#" class="btn btn-primary btn-block">分享经验</a>
+            </div>
+            <div class="widget-box">
+                <h4 class="widget-box-title">最新公告</h4>
+                <ul class="widget-links list-unstyled">
+                    <li class="widget-links-item">
+                        <a title="1024程序员节，大神问答正式上线啦！" href="#">1024程序员节，大神问答正式上线啦！</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="widget-box">
+                <h2 class="h4 widget-box-title">热议话题 <a href="#/topics" title="更多">»</a></h2>
+                <ul class="taglist-inline multi">
+                    <li class="tagPopup"><a class="tag" data-toggle="popover"  href="#/topic/iOS" target="_blank">iOS</a></li>
+                    <li class="tagPopup"><a class="tag" data-toggle="popover"  href="#/topic/Android" target="_blank">Android</a></li>
+                    <li class="tagPopup"><a class="tag" data-toggle="popover"  href="#/topic/Java" target="_blank">Java</a></li>
+                    <li class="tagPopup"><a class="tag" data-toggle="popover"  href="#/topic/Web%E5%89%8D%E7%AB%AF" target="_blank">Web前端</a></li>
+                    <li class="tagPopup"><a class="tag" data-toggle="popover"  href="#/topic/Linux" target="_blank">Linux</a></li>
+                    <li class="tagPopup"><a class="tag" data-toggle="popover"  href="#/topic/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F" target="_blank">微信小程序</a></li>
+                    <li class="tagPopup"><a class="tag" data-toggle="popover"  href="#/topic/%E8%BF%90%E7%BB%B4" target="_blank">运维</a></li>
+                    <li class="tagPopup"><a class="tag" data-toggle="popover"  href="#/topic/Python" target="_blank">Python</a></li>
+                    <li class="tagPopup"><a class="tag" data-toggle="popover"  href="#/topic/%E5%A4%A7%E6%95%B0%E6%8D%AE" target="_blank">大数据</a></li>
+                    <li class="tagPopup"><a class="tag" data-toggle="popover"  href="#/topic/MYSQL" target="_blank">MYSQL</a></li>
+                </ul>
+            </div>
+            <div class="widget-box mt30">
+                <h2 class="widget-box-title">
+                    财富榜
+                    <a href="#/top/coins" title="更多">»</a>
+                </h2>
+                <ol class="widget-top10">
+                    <li class="text-muted">
+                        <img class="avatar-32" src="#/image/avatar/12_middle">
+                        <a href="#/people/12" class="ellipsis" target="_blank">之首道</a>
+                        <span class="text-muted pull-right">6323 金币</span>
+                    </li>
+                    <li class="text-muted">
+                        <img class="avatar-32" src="#/image/avatar/4_middle">
+                        <a href="#/people/4" class="ellipsis" target="_blank">Leon</a>
+                        <span class="text-muted pull-right">6109 金币</span>
+                    </li>
+                    <li class="text-muted">
+                        <img class="avatar-32" src="#/image/avatar/8_middle">
+                        <a href="#/people/8" class="ellipsis" target="_blank">柯南@￥</a>
+                        <span class="text-muted pull-right">3082 金币</span>
+                    </li>
+                    <li class="text-muted">
+                        <img class="avatar-32" src="#/image/avatar/2_middle">
+                        <a href="#/people/2" class="ellipsis" target="_blank">小石头</a>
+                        <span class="text-muted pull-right">2874 金币</span>
+                    </li>
+                    <li class="text-muted">
+                        <img class="avatar-32" src="#/image/avatar/5_middle">
+                        <a href="#/people/5" class="ellipsis" target="_blank">小火影</a>
+                        <span class="text-muted pull-right">2130 金币</span>
+                    </li>
+                    <li class="text-muted">
+                        <img class="avatar-32" src="#/image/avatar/3_middle">
+                        <a href="#/people/3" class="ellipsis" target="_blank">wenjin</a>
+                        <span class="text-muted pull-right">1350 金币</span>
+                    </li>
+                    <li class="text-muted">
+                        <img class="avatar-32" src="#/image/avatar/7_middle">
+                        <a href="#/people/7" class="ellipsis" target="_blank">zoe</a>
+                        <span class="text-muted pull-right">1106 金币</span>
+                    </li>
+                    <li class="text-muted">
+                        <img class="avatar-32" src="#/image/avatar/6_middle">
+                        <a href="#/people/6" class="ellipsis" target="_blank">symlich</a>
+                        <span class="text-muted pull-right">984 金币</span>
+                    </li>
+                    <li class="text-muted">
+                        <img class="avatar-32" src="#/image/avatar/18_middle">
+                        <a href="#/people/18" class="ellipsis" target="_blank">咕咚</a>
+                        <span class="text-muted pull-right">457 金币</span>
+                    </li>
+                    <li class="text-muted">
+                        <img class="avatar-32" src="#/image/avatar/1_middle">
+                        <a href="#/people/1" class="ellipsis" target="_blank">admin</a>
+                        <span class="text-muted pull-right">454 金币</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        <ul class="list-unstyled list-inline">
+            <li>友情链接</li>
+            <li><a target="_blank" href="http://www.ibeifeng.com">北风</a></li>
+            <li><a target="_blank" href="http://www.baidu.com">百度</a></li>
+            <li><a target="_blank" href="http://www.google.com">谷歌</a></li>
+        </ul>
+        <div class="text-center">
+            <a href="#">关于我们</a>
+            <a href="#">联系我们</a>
+            <a href="#">Powered by Leslie 1.0</a>
+        </div>
+        <div class="copyright mt-10">
+            Copyright © 2017 <a href="#">程序猿问答</a> All Rights Reserved. <a href="#" target="_blank">Leslie</a> 版权所有
+        </div>
+        <div class="copyright mt-10">
+            <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备11111111号-1</a>
+        </div>
+    </div>
+</footer>
+<div class="modal fade" id="sendTo_message_model" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">发送私信</h4>
+            </div>
+            <div class="modal-body">
+                <form name="messageForm" id="sendTo_message_form">
+                    <input type="hidden" name="_token" value="f5Zj2qrN8CA7OzwQTbq0ytgPvmU9GaA7z3cvT15w">
+                    <input type="hidden" id="to_user_id" name="to_user_id" value="0">
+                    <div class="form-group">
+                        <label for="to_user_name" class="control-label">发给:</label>
+                        <span id="to_user_name"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="control-label">内容:</label>
+                        <textarea class="form-control" id="message-text" name="content"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="sendTo_submit">发送</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./static/components/jquery/dist/jquery.js"></script>
+<script src="./static/components/bootstrap/dist/js/bootstrap.js"></script>
+
+<link rel="stylesheet" href="./static/components/summernote/dist/summernote.css">
+<script src="./static/components/summernote/dist/summernote.js"></script>
+<script src="./static/components/summernote/lang/summernote-zh-CN.js"></script>
+<script src="./static/components/select2/dist/js/select2.js"></script>
+<script src="./static/components/angular/angular.js"></script>
+<script src="./static/components/oclazyload/dist/ocLazyLoad.js"></script>
+<script src="./static/components/angular-summernote/dist/angular-summernote.js"></script>
+<script src="./static/components/angular-ui-router/release/angular-ui-router.js"></script>
+
+
+<script src="./js/app.js"></script>
+</body>
+</html>

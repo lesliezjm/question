@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>问答网站</title>
+    <meta name="keywords" content="问答网站">
+    <meta name="description" content="程序员，为代码而生！大神问答，为程序员而生！">
+    <link rel="stylesheet" href="./static/components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./static/components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./static/components/summernote/dist/summernote.css">
+    <link rel="stylesheet" href="./static/components/select2/dist/css/select2.css">
+</head>
+<body>
+<div class="top-common-nav mb-50">
+    <div class="navbar-default navbar-fixed-top">
+        <nav class="navbar" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">程序猿问答</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="question.html">问答</a></li>
+                        <li><a href="topics.html">话题</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="login.html">登录</a></li>
+                        <li><a href="register.html">注册</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-right" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <span class="input-group-addon btn"><span id="search-button" class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+                        </div>
+                    </form>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="navbar-inverse">
+            <div class="container">
+                <ul class="nav navbar-nav navtags taglist-inline">
+                    <li><a href="#">javscript</a></li>
+                    <li><a href="#">php</a></li>
+                    <li><a href="#">python</a></li>
+                    <li><a href="#">java</a></li>
+                    <li><a href="#">mysql</a></li>
+                    <li><a href="#">html5</a></li>
+                    <li><a href="#">node.js</a></li>
+                    <li><a href="#">css3</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="top-alert mt-90 clearfix text-center">
+    <!--[if lt IE 9]>
+    <div class="alert alert-danger topframe" role="alert">你的浏览器实在<strong>太太太太太太旧了</strong>，放学别走，升级完浏览器再说
+        <a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a>
+    </div>
+    <![endif]-->
+</div>
+<div class="wrap">
+    <div class="container">
+        <div class="row mt-10">
+            <ol class="breadcrumb">
+                <li><a href="http://www.dashen100.com/questions">问答</a></li>
+                <li class="active">发起提问</li>
+            </ol>
+            <form id="questionForm" method="POST" role="form" action="http://www.dashen100.com/question/store">
+                <input type="hidden" id="editor_token" name="_token" value="P7N3KhfFb4xZslpAr0B865JG9MTtGWA05FL82IPU">
+                <input type="hidden" id="tags" name="tags" value="123,123123,java">
+                <input type="hidden" name="to_user_id" value="0">
+                <div class="form-group  ">
+                    <label for="title"> 请将您的问题告诉我们  :</label>
+                    <input id="title" type="text" name="title" class="form-control input-lg" placeholder="请在这里概述您的问题" value="">
+                </div>
+
+                <div id="titleSuggest" class="panel hide widget-suggest panel-default">
+                    <div class="panel-body">
+                        <p>
+                            <strong>这些问题可能有你需要的答案</strong>
+                            <button type="button" class="widget-suggest-close btn btn-default btn-xs ml-10">关闭提示</button>
+                        </p>
+                        <ul id="suggest-list" class="list-unstyled widget-suggest-list"></ul>
+                    </div>
+                </div>
+                <div class="form-group  ">
+                    <label for="question_editor">问题描述(选填)</label>
+                    <div id="question_editor" style="display: none;"></div>
+                    <!--<textarea name="text" class="summernote" id="question_editor" title="Contents"></textarea>-->
+                </div>
+
+                <div class="form-group">
+                    <label for="select_tags">添加话题</label>
+                    <select id="select_tags" name="select_tags" class="form-control" multiple="multiple" ></select>
+                </div>
+                <div class="row mt-20">
+                    <div class="col-md-8">
+                        <!--<div class="checkbox pull-left">
+                            悬赏
+                            <select name="price">
+                                <option selected="selected" value="0">0</option><option value="3">3</option><option value="5">5</option><option value="10">10</option><option value="15">15</option><option value="30">30</option><option value="50">50</option><option value="80">80</option><option value="100">100</option>
+                            </select> 金币
+                            <span class="span-line">|</span>
+                            <label>
+                                <input type="checkbox" name="hide" value="1"> 匿名
+                            </label>
+                        </div>-->
+                    </div>
+                    <div class="col-md-4">
+                        <input type="hidden" id="question_editor_content" name="description" value="">
+                        <button type="submit" class="btn btn-primary pull-right">发布问题</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        <ul class="list-unstyled list-inline">
+            <li>友情链接</li>
+            <li><a target="_blank" href="http://www.ibeifeng.com">北风</a></li>
+            <li><a target="_blank" href="http://www.baidu.com">百度</a></li>
+            <li><a target="_blank" href="http://www.google.com">谷歌</a></li>
+        </ul>
+        <div class="text-center">
+            <a href="#">关于我们</a>
+            <a href="#">联系我们</a>
+            <a href="#">Powered by Leslie 1.0</a>
+        </div>
+        <div class="copyright mt-10">
+            Copyright © 2017 <a href="#">程序猿问答</a> All Rights Reserved. <a href="#" target="_blank">Leslie</a> 版权所有
+        </div>
+        <div class="copyright mt-10">
+            <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备11111111号-1</a>
+        </div>
+    </div>
+</footer>
+<div class="modal fade" id="sendTo_message_model" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">发送私信</h4>
+            </div>
+            <div class="modal-body">
+                <form name="messageForm" id="sendTo_message_form">
+                    <input type="hidden" name="_token" value="f5Zj2qrN8CA7OzwQTbq0ytgPvmU9GaA7z3cvT15w">
+                    <input type="hidden" id="to_user_id" name="to_user_id" value="0">
+                    <div class="form-group">
+                        <label for="to_user_name" class="control-label">发给:</label>
+                        <span id="to_user_name"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="control-label">内容:</label>
+                        <textarea class="form-control" id="message-text" name="content"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="sendTo_submit">发送</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./static/components/jquery/dist/jquery.js"></script>
+<script src="./static/components/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript">
+    var is_login = Boolean("1");
+</script>
+<script src="./js/global.js"></script>
+<script src="./static/components/summernote/dist/summernote.js"></script>
+<script src="./static/components/summernote/lang/summernote-zh-CN.js"></script>
+<script src="./static/components/select2/dist/js/select2.js"></script>
+<script type="text/javascript">
+    var suggest_timer = null;
+    $(document).ready(function() {
+        $('#question_editor').summernote({
+            lang: 'zh-CN',
+            height: 180,
+            placeholder:'您可以在这里继续补充问题细节',
+            toolbar: [ ['common', ['style','bold','ol','link','picture','clear','fullscreen']] ],
+            callbacks: {
+                onChange:function (contents, $editable) {
+                    var code = $(this).summernote("code");
+                    $("#question_editor_content").val(code);
+                },
+                onImageUpload: function(files) {
+                    upload_editor_image(files[0],'question_editor');
+                }
+            }
+        });
+
+        /*suggest处理*/
+        $("#title").keydown(function(){
+
+            if(suggest_timer){
+                clearTimeout(suggest_timer);
+            }
+            suggest_timer = setTimeout(function() {
+                var title = $("#title").val();
+                if( title.length > 1 ){
+                    $.ajax({
+                        url: '/question/suggest',
+                        type:'post',
+                        data:'word='+title,
+                        cache: false,
+                        success: function(html){
+                            if(html == ''){
+                                $("#suggest-list").html('<li>没有找到相似问题！</li>');
+                                return;
+                            }
+                            $(".widget-suggest").removeClass("hide");
+                            $("#suggest-list").html(html);
+                        }
+                    });
+                }
+            }, 500);
+        });
+
+        $(".widget-suggest-close").click(function(){
+            $(".widget-suggest").addClass("hide");
+        });
+
+    });
+</script>
+</body>
+</html>

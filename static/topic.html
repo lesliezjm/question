@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>问答网站</title>
+    <meta name="keywords" content="问答网站">
+    <meta name="description" content="程序员，为代码而生！大神问答，为程序员而生！">
+    <link rel="stylesheet" href="./static/components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./static/components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./css/global.css">
+</head>
+<body>
+<div class="top-common-nav mb-50">
+    <div class="navbar-default navbar-fixed-top">
+        <nav class="navbar" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">程序猿问答</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="question.html">问答</a></li>
+                        <li><a href="topics.html">话题</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="login.html">登录</a></li>
+                        <li><a href="register.html">注册</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-right" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <span class="input-group-addon btn"><span id="search-button" class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+                        </div>
+                    </form>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="navbar-inverse">
+            <div class="container">
+                <ul class="nav navbar-nav navtags taglist-inline">
+                    <li><a href="#">javscript</a></li>
+                    <li><a href="#">php</a></li>
+                    <li><a href="#">python</a></li>
+                    <li><a href="#">java</a></li>
+                    <li><a href="#">mysql</a></li>
+                    <li><a href="#">html5</a></li>
+                    <li><a href="#">node.js</a></li>
+                    <li><a href="#">css3</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="top-alert mt-90 clearfix text-center">
+    <!--[if lt IE 9]>
+    <div class="alert alert-danger topframe" role="alert">你的浏览器实在<strong>太太太太太太旧了</strong>，放学别走，升级完浏览器再说
+        <a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a>
+    </div>
+    <![endif]-->
+</div>
+<div class="wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-9 main">
+
+                <section class="tag-header mt-20">
+                    <div>
+                        <span class="h4 tag-header-title">Android</span>
+
+                        <div class="tag-header-follow">
+                            <button type="button" id="follow-button" class="btn btn-default btn-xs" data-source_type="tag" data-source_id="1" data-show_num="false" data-toggle="tooltip" data-placement="right" title="" data-original-title="关注后将获得更新提醒">关注</button>
+                        </div>
+                    </div>
+                    <p class="tag-header-summary">暂无介绍</p>
+                </section>
+
+                <ul class="nav nav-tabs nav-tabs-zen">
+                    <li class="active"><a href="#/topic/Android">问答</a></li>
+                    <!--<li  ><a href="#/topic/Android/articles">文章</a></li>-->
+                    <!--<li  ><a href="#/topic/Android/details">百科</a></li>-->
+                </ul>
+                <div class="tab-content">
+                    <div class="stream-list">
+                        <section class="stream-list-item">
+                            <div class="qa-rank">
+                                <div class="answers">
+                                    1<small>回答</small>
+                                </div>
+                                <div class="views hidden-xs">
+                                    93<small>浏览</small>
+                                </div>
+                            </div>
+                            <div class="summary">
+                                <ul class="author list-inline">
+                                    <li>
+                                        <a href="#/people/13">小婉儿</a>
+                                        <span class="split"></span>
+                                        <span class="askDate">2016-10-19 16:35:54</span>
+                                    </li>
+                                </ul>
+                                <h2 class="title"><a href="#/question/60">android-RadioButton-如何自定义RadioButton左边的圆圈</a></h2>
+                                <ul class="taglist-inline ib">
+                                    <li class="tagPopup"><a class="tag" href="#/topic/Android">Android</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="stream-list-item">
+                            <div class="qa-rank">
+                                <div class="answers">
+                                    1<small>回答</small>
+                                </div>
+                                <div class="views hidden-xs">
+                                    76<small>浏览</small>
+                                </div>
+                            </div>
+                            <div class="summary">
+                                <ul class="author list-inline">
+                                    <li>
+                                        <a href="#/people/13">小婉儿</a>
+                                        <span class="split"></span>
+                                        <span class="askDate">2016-10-19 16:38:23</span>
+                                    </li>
+                                </ul>
+                                <h2 class="title"><a href="#/question/61">android-RadioButton-如何设置选择框和文字的间距</a></h2>
+                                <ul class="taglist-inline ib">
+                                    <li class="tagPopup"><a class="tag" href="#/topic/Android">Android</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="stream-list-item">
+                            <div class="qa-rank">
+                                <div class="answers">
+                                    1<small>回答</small>
+                                </div>
+                                <div class="views hidden-xs">
+                                    78<small>浏览</small>
+                                </div>
+                            </div>
+                            <div class="summary">
+                                <ul class="author list-inline">
+                                    <li>
+                                        <a href="#/people/13">小婉儿</a>
+                                        <span class="split"></span>
+                                        <span class="askDate">2016-10-19 16:41:20</span>
+                                    </li>
+                                </ul>
+                                <h2 class="title"><a href="#/question/62">android-RadioButton-如何默认选中RadioGroup中某一个RadioButton</a></h2>
+                                <ul class="taglist-inline ib">
+                                    <li class="tagPopup"><a class="tag" href="#/topic/Android">Android</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="stream-list-item">
+                            <div class="qa-rank">
+                                <div class="answers">
+                                    1<small>回答</small>
+                                </div>
+                                <div class="views hidden-xs">
+                                    63<small>浏览</small>
+                                </div>
+                            </div>
+                            <div class="summary">
+                                <ul class="author list-inline">
+                                    <li>
+                                        <a href="#/people/13">小婉儿</a>
+                                        <span class="split"></span>
+                                        <span class="askDate">2016-10-19 16:49:15</span>
+                                    </li>
+                                </ul>
+                                <h2 class="title"><a href="#/question/65">android-CheckBox-如何对checkbox的选中状态进行监听</a></h2>
+                                <ul class="taglist-inline ib">
+                                    <li class="tagPopup"><a class="tag" href="#/topic/Android">Android</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="stream-list-item">
+                            <div class="qa-rank">
+                                <div class="answers">
+                                    1<small>回答</small>
+                                </div>
+                                <div class="views hidden-xs">
+                                    63<small>浏览</small>
+                                </div>
+                            </div>
+                            <div class="summary">
+                                <ul class="author list-inline">
+                                    <li>
+                                        <a href="#/people/13">小婉儿</a>
+                                        <span class="split"></span>
+                                        <span class="askDate">2016-10-19 16:59:06</span>
+                                    </li>
+                                </ul>
+                                <h2 class="title"><a href="#/question/74">android-ImageView-如何对ImageView的图片进行缩放（scaleType）</a></h2>
+                                <ul class="taglist-inline ib">
+                                    <li class="tagPopup"><a class="tag" href="#/topic/Android">Android</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="stream-list-item">
+                            <div class="qa-rank">
+                                <div class="answers">
+                                    1<small>回答</small>
+                                </div>
+                                <div class="views hidden-xs">
+                                    68<small>浏览</small>
+                                </div>
+                            </div>
+                            <div class="summary">
+                                <ul class="author list-inline">
+                                    <li>
+                                        <a href="#/people/13">小婉儿</a>
+                                        <span class="split"></span>
+                                        <span class="askDate">2016-10-19 16:57:07</span>
+                                    </li>
+                                </ul>
+                                <h2 class="title"><a href="#/question/73">android-Button-如何设置Button或者ImageButton的背景透明</a></h2>
+                                <ul class="taglist-inline ib">
+                                    <li class="tagPopup"><a class="tag" href="#/topic/Android">Android</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="stream-list-item">
+                            <div class="qa-rank">
+                                <div class="answers">
+                                    1<small>回答</small>
+                                </div>
+                                <div class="views hidden-xs">
+                                    64<small>浏览</small>
+                                </div>
+                            </div>
+                            <div class="summary">
+                                <ul class="author list-inline">
+                                    <li>
+                                        <a href="#/people/13">小婉儿</a>
+                                        <span class="split"></span>
+                                        <span class="askDate">2016-10-19 16:56:21</span>
+                                    </li>
+                                </ul>
+                                <h2 class="title"><a href="#/question/71">android-Button-如何让Button既显示图片又显示文字</a></h2>
+                                <ul class="taglist-inline ib">
+                                    <li class="tagPopup"><a class="tag" href="#/topic/Android">Android</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="stream-list-item">
+                            <div class="qa-rank">
+                                <div class="answers">
+                                    1<small>回答</small>
+                                </div>
+                                <div class="views hidden-xs">
+                                    83<small>浏览</small>
+                                </div>
+                            </div>
+                            <div class="summary">
+                                <ul class="author list-inline">
+                                    <li>
+                                        <a href="#/people/13">小婉儿</a>
+                                        <span class="split"></span>
+                                        <span class="askDate">2016-10-19 16:54:41</span>
+                                    </li>
+                                </ul>
+                                <h2 class="title"><a href="#/question/69">android-checkbox-如何自定义checkbox的样式</a></h2>
+                                <ul class="taglist-inline ib">
+                                    <li class="tagPopup"><a class="tag" href="#/topic/Android">Android</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="stream-list-item">
+                            <div class="qa-rank">
+                                <div class="answers">
+                                    1<small>回答</small>
+                                </div>
+                                <div class="views hidden-xs">
+                                    71<small>浏览</small>
+                                </div>
+                            </div>
+                            <div class="summary">
+                                <ul class="author list-inline">
+                                    <li>
+                                        <a href="#/people/13">小婉儿</a>
+                                        <span class="split"></span>
+                                        <span class="askDate">2016-10-19 16:46:33</span>
+                                    </li>
+                                </ul>
+                                <h2 class="title"><a href="#/question/64">android-CheckBox-如何解决CheckBox的button和文字版本间距不一致的问题</a></h2>
+                                <ul class="taglist-inline ib">
+                                    <li class="tagPopup"><a class="tag" href="#/topic/Android">Android</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="stream-list-item">
+                            <div class="qa-rank">
+                                <div class="answers">
+                                    1<small>回答</small>
+                                </div>
+                                <div class="views hidden-xs">
+                                    62<small>浏览</small>
+                                </div>
+                            </div>
+                            <div class="summary">
+                                <ul class="author list-inline">
+                                    <li>
+                                        <a href="#/people/13">小婉儿</a>
+                                        <span class="split"></span>
+                                        <span class="askDate">2016-10-19 16:52:00</span>
+                                    </li>
+                                </ul>
+                                <h2 class="title"><a href="#/question/66">android-CheckBox-ListView中对checkbox进行全部选择的解决方案</a></h2>
+                                <ul class="taglist-inline ib">
+                                    <li class="tagPopup"><a class="tag" href="#/topic/Android">Android</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="stream-list-item">
+                            <div class="qa-rank">
+                                <div class="answers">
+                                    1<small>回答</small>
+                                </div>
+                                <div class="views hidden-xs">
+                                    68<small>浏览</small>
+                                </div>
+                            </div>
+                            <div class="summary">
+                                <ul class="author list-inline">
+                                    <li>
+                                        <a href="#/people/6">symlich</a>
+                                        <span class="split"></span>
+                                        <span class="askDate">2016-10-20 10:58:48</span>
+                                    </li>
+                                </ul>
+                                <h2 class="title"><a href="#/question/108">Android Studio 中的Gradle的说明</a></h2>
+                                <ul class="taglist-inline ib">
+                                    <li class="tagPopup"><a class="tag" href="#/topic/Android">Android</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="stream-list-item">
+                            <div class="qa-rank">
+                                <div class="answers">
+                                    1<small>回答</small>
+                                </div>
+                                <div class="views hidden-xs">
+                                    67<small>浏览</small>
+                                </div>
+                            </div>
+                            <div class="summary">
+                                <ul class="author list-inline">
+                                    <li>
+                                        <a href="#/people/6">symlich</a>
+                                        <span class="split"></span>
+                                        <span class="askDate">2016-10-20 11:03:39</span>
+                                    </li>
+                                </ul>
+                                <h2 class="title"><a href="#/question/110">eclipse中的.9图片在as中都编译不了，怎么办？</a></h2>
+                                <ul class="taglist-inline ib">
+                                    <li class="tagPopup"><a class="tag" href="#/topic/Android">Android</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="stream-list-item">
+                            <div class="qa-rank">
+                                <div class="answers">
+                                    1<small>回答</small>
+                                </div>
+                                <div class="views hidden-xs">
+                                    75<small>浏览</small>
+                                </div>
+                            </div>
+                            <div class="summary">
+                                <ul class="author list-inline">
+                                    <li>
+                                        <a href="#/people/5">小火影</a>
+                                        <span class="split"></span>
+                                        <span class="askDate">2016-10-20 14:27:33</span>
+                                    </li>
+                                </ul>
+                                <h2 class="title"><a href="#/question/131">android-ImageView的图片缩放（scaleType）</a></h2>
+                                <ul class="taglist-inline ib">
+                                    <li class="tagPopup"><a class="tag" href="#/topic/Android">Android</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="stream-list-item">
+                            <div class="qa-rank">
+                                <div class="answers">
+                                    1<small>回答</small>
+                                </div>
+                                <div class="views hidden-xs">
+                                    82<small>浏览</small>
+                                </div>
+                            </div>
+                            <div class="summary">
+                                <ul class="author list-inline">
+                                    <li>
+                                        <a href="#/people/5">小火影</a>
+                                        <span class="split"></span>
+                                        <span class="askDate">2016-10-20 14:29:37</span>
+                                    </li>
+                                </ul>
+                                <h2 class="title"><a href="#/question/132">android-TextView文字阴影</a></h2>
+                                <ul class="taglist-inline ib">
+                                    <li class="tagPopup"><a class="tag" href="#/topic/Android">Android</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="stream-list-item">
+                            <div class="qa-rank">
+                                <div class="answers">
+                                    1<small>回答</small>
+                                </div>
+                                <div class="views hidden-xs">
+                                    88<small>浏览</small>
+                                </div>
+                            </div>
+                            <div class="summary">
+                                <ul class="author list-inline">
+                                    <li>
+                                        <a href="#/people/5">小火影</a>
+                                        <span class="split"></span>
+                                        <span class="askDate">2016-10-20 14:30:50</span>
+                                    </li>
+                                </ul>
+                                <h2 class="title"><a href="#/question/133">android-TextView显示HTML文本</a></h2>
+                                <ul class="taglist-inline ib">
+                                    <li class="tagPopup"><a class="tag" href="#/topic/Android">Android</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="text-center">
+                        <ul class="pagination"><li class="disabled"><span>«</span></li> <li class="active"><span>1</span></li><li><a href="#/topic/Android?page=2">2</a></li><li><a href="#/topic/Android?page=3">3</a></li><li><a href="#/topic/Android?page=4">4</a></li><li><a href="#/topic/Android?page=5">5</a></li><li><a href="#/topic/Android?page=6">6</a></li><li><a href="#/topic/Android?page=7">7</a></li><li><a href="#/topic/Android?page=8">8</a></li><li class="disabled"><span>...</span></li><li><a href="#/topic/Android?page=13">13</a></li><li><a href="#/topic/Android?page=14">14</a></li> <li><a href="#/topic/Android?page=2" rel="next">»</a></li></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-3 side">
+                <div class="widget-box">
+                    <h2 class="h4 widget-box__title">相关标签</h2>
+                    <ul class="taglist-inline multi">
+                                            <li class="tagPopup"><a class="tag" href="#/topic/Java">Java</a></li>
+                                            <li class="tagPopup"><a class="tag" href="#/topic/Android">Android</a></li>
+                                            <li class="tagPopup"><a class="tag" href="#/topic/iOS">iOS</a></li>
+                                            <li class="tagPopup"><a class="tag" href="#/topic/Web%E5%89%8D%E7%AB%AF">Web前端</a></li>
+                                            <li class="tagPopup"><a class="tag" href="#/topic/%E8%BF%90%E7%BB%B4">运维</a></li>
+                                            <li class="tagPopup"><a class="tag" href="#/topic/Linux">Linux</a></li>
+                                            <li class="tagPopup"><a class="tag" href="#/topic/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F">微信小程序</a></li>
+                                            <li class="tagPopup"><a class="tag" href="#/topic/%E5%A4%A7%E6%95%B0%E6%8D%AE">大数据</a></li>
+                                            <li class="tagPopup"><a class="tag" href="#/topic/Python">Python</a></li>
+                                            <li class="tagPopup"><a class="tag" href="#/topic/MYSQL">MYSQL</a></li>
+                                        </ul>
+                </div>
+
+                <div class="widget-box">
+                    <h2 class="h4 widget-box-title">推荐用户</h2>
+                    <ul class="list-unstyled">
+                        <li class="media  widget-user-item ">
+                            <a href="#/people/8" class="user-card pull-left" target="_blank">
+                                <img class="avatar-50" src="#/image/avatar/8_middle" alt="柯南@￥"></a>
+                            </a>
+                            <div class="media-object">
+                                <strong><a href="#/people/8" target="_blank">柯南@￥</a></strong>
+                                <p class="text-muted"> 193 回答，3赞同</p>
+                            </div>
+                        </li>
+                        <li class="media  widget-user-item ">
+                            <a href="#/people/2" class="user-card pull-left" target="_blank">
+                                <img class="avatar-50" src="#/image/avatar/2_middle"
+                                     alt="小石头"></a>
+                            </a>
+                            <div class="media-object">
+                                <strong><a href="#/people/2" target="_blank">小石头</a></strong>
+                                <p class="text-muted"> 162 回答，3赞同</p>
+                            </div>
+                        </li>
+                        <li class="media  widget-user-item ">
+                            <a href="#/people/5" class="user-card pull-left" target="_blank">
+                                <img class="avatar-50" src="#/image/avatar/5_middle"
+                                     alt="小火影"></a>
+                            </a>
+                            <div class="media-object">
+                                <strong><a href="#/people/5" target="_blank">小火影</a></strong>
+                                <p class="text-muted"> 5 回答，0赞同</p>
+                            </div>
+                        </li>
+                        <li class="media  widget-user-item ">
+                            <a href="#/people/3" class="user-card pull-left" target="_blank">
+                                <img class="avatar-50" src="#/image/avatar/3_middle"
+                                     alt="wenjin"></a>
+                            </a>
+                            <div class="media-object">
+                                <strong><a href="#/people/3" target="_blank">wenjin</a></strong>
+                                <p class="text-muted"> 111 回答，1赞同</p>
+                            </div>
+                        </li>
+                        <li class="media  widget-user-item ">
+                            <a href="#/people/7" class="user-card pull-left" target="_blank">
+                                <img class="avatar-50" src="#/image/avatar/7_middle"
+                                     alt="zoe"></a>
+                            </a>
+                            <div class="media-object">
+                                <strong><a href="#/people/7" target="_blank">zoe</a></strong>
+                                <p class="text-muted"> 74 回答，3赞同</p>
+                            </div>
+                        </li>
+                        <li class="media  widget-user-item ">
+                            <a href="#/people/13" class="user-card pull-left" target="_blank">
+                                <img class="avatar-50" src="#/image/avatar/13_middle" alt="小婉儿"></a>
+                            </a>
+                            <div class="media-object">
+                                <strong><a href="#/people/13" target="_blank">小婉儿</a></strong>
+                                <p class="text-muted"> 0 回答，0赞同</p>
+                            </div>
+                        </li>
+                        <li class="media  widget-user-item ">
+                            <a href="#/people/1" class="user-card pull-left" target="_blank">
+                                <img class="avatar-50" src="#/image/avatar/1_middle" alt="admin"></a>
+                            </a>
+                            <div class="media-object">
+                                <strong><a href="#/people/1" target="_blank">admin</a></strong>
+                                <p class="text-muted"> 3 回答，16赞同</p>
+                            </div>
+                        </li>
+                        <li class="media  widget-user-item ">
+                            <a href="#/people/15" class="user-card pull-left" target="_blank">
+                                <img class="avatar-50" src="#/image/avatar/15_middle" alt="zzl"></a>
+                            </a>
+                            <div class="media-object">
+                                <strong><a href="#/people/15" target="_blank">zzl</a></strong>
+                                <p class="text-muted"> 36 回答，2赞同</p>
+                            </div>
+                        </li>
+                        <li class="media  widget-user-item ">
+                            <a href="#/people/16" class="user-card pull-left" target="_blank">
+                                <img class="avatar-50" src="#/image/avatar/16_middle"
+                                     alt="Ardor"></a>
+                            </a>
+                            <div class="media-object">
+                                <strong><a href="#/people/16" target="_blank">Ardor</a></strong>
+                                <p class="text-muted"> 3 回答，1赞同</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- /.side -->
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        <ul class="list-unstyled list-inline">
+            <li>友情链接</li>
+            <li><a target="_blank" href="http://www.ibeifeng.com">北风</a></li>
+            <li><a target="_blank" href="http://www.baidu.com">百度</a></li>
+            <li><a target="_blank" href="http://www.google.com">谷歌</a></li>
+        </ul>
+        <div class="text-center">
+            <a href="#">关于我们</a>
+            <a href="#">联系我们</a>
+            <a href="#">Powered by Leslie 1.0</a>
+        </div>
+        <div class="copyright mt-10">
+            Copyright © 2017 <a href="#">程序猿问答</a> All Rights Reserved. <a href="#" target="_blank">Leslie</a> 版权所有
+        </div>
+        <div class="copyright mt-10">
+            <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备11111111号-1</a>
+        </div>
+    </div>
+</footer>
+<div class="modal fade" id="sendTo_message_model" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">发送私信</h4>
+            </div>
+            <div class="modal-body">
+                <form name="messageForm" id="sendTo_message_form">
+                    <input type="hidden" name="_token" value="f5Zj2qrN8CA7OzwQTbq0ytgPvmU9GaA7z3cvT15w">
+                    <input type="hidden" id="to_user_id" name="to_user_id" value="0">
+                    <div class="form-group">
+                        <label for="to_user_name" class="control-label">发给:</label>
+                        <span id="to_user_name"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="control-label">内容:</label>
+                        <textarea class="form-control" id="message-text" name="content"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="sendTo_submit">发送</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./static/components/jquery/dist/jquery.js"></script>
+<script src="./static/components/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>

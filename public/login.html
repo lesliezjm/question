@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-cn" ng-app="myApp.member">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用户注册 - 程序猿问答 </title>
+    <meta name="keywords" content="用户注册" />
+    <meta name="description" content="用户注册" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./static/components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./static/components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./css/account.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-controller="member.ctrl">
+<div class="container">
+    <div class="header text-center">
+        <h1>
+            <a href="index.html" class="logo">程序员问答</a>
+        </h1>
+        <p class="description text-muted">(程序员问答() { console.log(&quot;程序员专用问答网站，又快又准找到问题答案&quot;); })()</p>
+    </div>
+
+    <div class="col-md-6 col-md-offset-3 bg-white login-wrap">
+        <h1 class="h4 text-center text-muted login-title">用户登录</h1>
+        <form role="form" name="loginForm" ng-submit="doLogin()">
+            <input type="hidden" name="_token" value="f5Zj2qrN8CA7OzwQTbq0ytgPvmU9GaA7z3cvT15w">
+            <div class="form-group ">
+                <label class="required">邮箱</label>
+                <input type="text" class="form-control" ng-model="user.email" name="email" required="" placeholder="注册邮箱" value="">
+            </div>
+
+            <div class="form-group ">
+                <label for="" class="required">密码</label>
+                <input type="password" class="form-control" ng-model="user.password" name="password" required="" placeholder="不少于 6 位">
+            </div>
+
+
+            <div class="form-group clearfix">
+                <div class="checkbox pull-left">
+                    <label><input name="remember" type="checkbox" value="1" checked=""> 记住登录状态</label>
+                </div>
+                <button type="submit" class="btn btn-primary pull-right pl20 pr20">登录</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="text-center col-md-12 login-link">
+        <a href="register.html">注册新账号</a>
+        |
+        <a href="index.html">首页</a>
+        |
+        <a href="forgetPassword.html">找回密码</a>
+    </div>
+</div>
+
+<script src="./static/components/jquery/dist/jquery.js"></script>
+<script src="./static/components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="./static/components/angular/angular.js"></script>
+<script src="./js/member.js"></script>
+</body>
+</html>

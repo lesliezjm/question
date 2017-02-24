@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>问答网站</title>
+    <meta name="keywords" content="问答网站">
+    <meta name="description" content="程序员，为代码而生！大神问答，为程序员而生！">
+    <link rel="stylesheet" href="./static/components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./static/components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./static/components/summernote/dist/summernote.css">
+</head>
+<body>
+<div class="top-common-nav mb-50">
+    <div class="navbar-default navbar-fixed-top">
+        <nav class="navbar" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">程序猿问答</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="question.html">问答</a></li>
+                        <li><a href="topics.html">话题</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="login.html">登录</a></li>
+                        <li><a href="register.html">注册</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-right" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <span class="input-group-addon btn"><span id="search-button" class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+                        </div>
+                    </form>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="navbar-inverse">
+            <div class="container">
+                <ul class="nav navbar-nav navtags taglist-inline">
+                    <li><a href="#">javscript</a></li>
+                    <li><a href="#">php</a></li>
+                    <li><a href="#">python</a></li>
+                    <li><a href="#">java</a></li>
+                    <li><a href="#">mysql</a></li>
+                    <li><a href="#">html5</a></li>
+                    <li><a href="#">node.js</a></li>
+                    <li><a href="#">css3</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="top-alert mt-90 clearfix text-center">
+    <!--[if lt IE 9]>
+    <div class="alert alert-danger topframe" role="alert">你的浏览器实在<strong>太太太太太太旧了</strong>，放学别走，升级完浏览器再说
+        <a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a>
+    </div>
+    <![endif]-->
+</div>
+<div class="wrap">
+    <div class="container">
+        <div class="row mt-10">
+            <div class="col-xs-12 col-md-9 main">
+                <div class="widget-question">
+                    <h4 class="title">
+                        CentOS安装LAMP(Apache+MySQL+PHP)
+                    </h4>
+                    <ul class="taglist-inline">
+                        <li class="tagPopup"><a class="tag" href="#/topic/%E8%BF%90%E7%BB%B4">运维</a></li>
+                    </ul>
+                    <div class="description mt-10">
+                        <div class="text-fmt ">
+
+                        </div>
+
+                        <div class="post-opt mt-10">
+                            <ul class="list-inline">
+                                <li><a class="comments" data-toggle="collapse" href="#comments-question-1064" aria-expanded="false" aria-controls="comment-1064"><i class="fa fa-comment-o"></i> 0 条评论</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="collapse widget-comments mb-20" id="comments-question-1064" data-source_type="question" data-source_id="1064">
+                            <div class="widget-comment-list"></div>
+                            <div class="widget-comment-form row">
+                                <form class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea name="content" placeholder="写下你的评论" class="form-control" id="comment-question-content-1064"></textarea>
+                                    </div>
+                                </form>
+                                <div class="col-md-12 text-right">
+                                    <a href="#" class="text-muted collapse-cancel" data-collapse_id="comments-question-1064">取消</a>
+                                    <button type="submit" class="btn btn-primary btn-sm ml-10 comment-btn" id="question-comment-1064-btn" data-token="P7N3KhfFb4xZslpAr0B865JG9MTtGWA05FL82IPU" data-source_id="1064" data-source_type="question" data-to_user_id="0">提交评论</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="widget-answers mt-15">
+                    <div class="btn-group pull-right" role="group">
+                        <a href="#/question/1064" class="btn btn-default btn-xs  active ">默认排序</a>
+                        <a href="#/question/1064?sort=created_at" id="sortby-created" class="btn btn-default btn-xs ">时间排序</a>
+                    </div>
+
+                    <h2 class="h4 post-title"> 1 个回答</h2>
+
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#/people/5" class="avatar-link user-card" target="_blank">
+                                <img class="avatar-40" src="#/image/avatar/5_middle" alt="小火影"></a>
+
+                        </div>
+                        <div class="media-body">
+                            <div class="media-heading">
+                                <strong>
+                                    <a href="#/people/5" class="mr-5 user-card">小火影</a><span class="text-gold">                                </span>
+                                </strong>
+                                <span class="answer-time text-muted hidden-xs">2017-01-05 15:47</span>
+                            </div>
+                            <div class="content">
+                                <p></p><p><span style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">一般情况下，安装的都是最新的正式版，除非你有特殊需求，要安装指定的版本，本文暂不讨论。从最基础的开始，一点点完成一个可用的 Linux 主机。这里就开始介绍如何在 CentOS 6.0 上安装 LAMP 组件。经过如下语句安装，目前安装到的版本为：</span></p>
+
+                                <ul><li>PHP：5.3.2</li><li>Apache：2.2.15</li><li>MySQL：5.1.52</li></ul>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">一、安装 MySQL</p>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">首先来进行 MySQL 的安装。打开超级终端，输入：</p>
+
+                                <pre class="hljs coffeescript"><span>[</span>root@localhost <span>~]</span><span class="hljs-comment"># yum install mysql mysql</span><span><span class="hljs-comment">-</span></span><span class="hljs-comment">server</span></pre>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">安装完毕，让 MySQL 能够随系统自动启动：</p>
+
+                                <pre class="hljs coffeescript"><span>[</span>root@localhost <span>~]</span><span class="hljs-comment"># chkconfig </span><span><span class="hljs-comment">--</span></span><span class="hljs-comment">levels </span><span><span class="hljs-comment">235</span></span><span class="hljs-comment"> mysqld on</span>
+<span>[</span>root@localhost <span>~]</span><span class="hljs-comment"># </span><span><span class="hljs-comment">/etc/i</span></span><span class="hljs-comment">nit</span><span><span class="hljs-comment">.</span></span><span><span class="hljs-comment">d</span></span><span><span class="hljs-comment">/</span></span><span class="hljs-comment">mysqld start</span></pre>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">设置 MySQL 数据 root 账户的密码：</p>
+
+                                <pre class="hljs coffeescript"><span>[</span>root@localhost <span>~]</span><span class="hljs-comment"># mysql_secure_installation</span></pre>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">当出现如下提示时候直接按回车：</p>
+
+                                <pre class="hljs bash">Enter current password <span><span class="hljs-keyword">for</span></span> root</pre>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">出现如下再次回车：</p>
+
+                                <pre class="hljs sql"><span class="hljs-keyword">Set</span> root <span class="hljs-keyword">password</span><span>?</span> <span>[</span><span>Y</span><span>/</span>n<span>]</span></pre>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">出现如下提示输入你需要设置的密码，回车后在输入一次确认：</p>
+
+                                <pre class="hljs nginx"><span class="hljs-attribute">New</span> password<span>:</span></pre>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">接下来还会有四个确认，分别是：</p>
+
+                                <pre class="hljs apache"><span class="hljs-attribute">Remove</span> anonymous users<span>?</span><span class="hljs-meta"> </span><span><span class="hljs-meta">[</span></span><span><span class="hljs-meta">Y</span></span><span><span class="hljs-meta">/</span></span><span class="hljs-meta">n</span><span><span class="hljs-meta">]</span></span>
+<span class="hljs-attribute">Disallow</span> root login remotely<span>?</span><span class="hljs-meta"> </span><span><span class="hljs-meta">[</span></span><span><span class="hljs-meta">Y</span></span><span><span class="hljs-meta">/</span></span><span class="hljs-meta">n</span><span><span class="hljs-meta">]</span></span>
+<span class="hljs-attribute">Remove</span> test database and access to it<span>?</span><span class="hljs-meta"> </span><span><span class="hljs-meta">[</span></span><span><span class="hljs-meta">Y</span></span><span><span class="hljs-meta">/</span></span><span class="hljs-meta">n</span><span><span class="hljs-meta">]</span></span>
+<span class="hljs-attribute">Reload</span> privilege tables now<span>?</span><span class="hljs-meta"> </span><span><span class="hljs-meta">[</span></span><span><span class="hljs-meta">Y</span></span><span><span class="hljs-meta">/</span></span><span class="hljs-meta">n</span><span><span class="hljs-meta">]</span></span></pre>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">直接回车即可。</p>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">二、安装 Apache 组件</p>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">　　由于 CentOS 已经封装了 Apache，直接运行安装：</p>
+
+                                <pre class="hljs coffeescript"><span>[</span>root@localhost <span>~]</span><span class="hljs-comment"># yum install httpd</span></pre>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">同样配置系统让 Apache 随系统启动：</p>
+
+                                <pre class="hljs coffeescript"><span>[</span>root@localhost <span>~]</span><span class="hljs-comment"># chkconfig </span><span><span class="hljs-comment">--</span></span><span class="hljs-comment">levels </span><span><span class="hljs-comment">235</span></span><span class="hljs-comment"> httpd on</span></pre>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">配置完毕，启动 Apache：</p>
+
+                                <pre class="hljs coffeescript"><span>[</span>root@localhost <span>~]</span><span class="hljs-comment"># </span><span><span class="hljs-comment">/etc/i</span></span><span class="hljs-comment">nit</span><span><span class="hljs-comment">.</span></span><span><span class="hljs-comment">d</span></span><span><span class="hljs-comment">/</span></span><span class="hljs-comment">httpd start</span></pre>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">　　此时已经可以访问你的服务器，不出意外的话，能够看到 “Apache 2 Test Page powered by CentOS” 的测试页面。注意，如果其他机器访问这台服务无法显示这个页面，而直接在这台服务器上可以访问的话，一般情况下是 CentOS 自带的防火墙禁止了。你只需要进入防火墙，将 “WWW” 对应的 “80” 端口打开即可。</p>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;"><img alt="" src="http://www.centoscn.com/uploads/allimg/130331/21064910F-0.jpg" width="560"></p>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">　　注意：在 CentOS 中 Apache 的默认根目录是 /var/www/html，配置文件 /etc/httpd/conf/httpd.conf。其他配置存储在 /etc/httpd/conf.d/ 目录。<br><br><strong>三、安装 PHP</strong></p>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">输入如下指令安装 PHP:</p>
+
+                                <pre class="hljs coffeescript"><span>[</span>root@localhost <span>~]</span><span class="hljs-comment"># yum install php</span></pre>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">需要重新启动 Apache 服务：</p>
+
+                                <pre class="hljs coffeescript"><span>[</span>root@localhost <span>~]</span><span class="hljs-comment"># </span><span><span class="hljs-comment">/etc/i</span></span><span class="hljs-comment">nit</span><span><span class="hljs-comment">.</span></span><span><span class="hljs-comment">d</span></span><span><span class="hljs-comment">/</span></span><span class="hljs-comment">httpd restart</span></pre>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;"><strong>四、测试 PHP 相关信息</strong></p>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">　　这步实际上可以省略，但是为了测试是否安装成功，你可以新建一个 PHP 页面进行测试，使用 vim 编辑器新建：</p>
+
+                                <pre class="hljs coffeescript"><span>[</span>root@localhost <span>~]</span><span class="hljs-comment"># </span><span><span class="hljs-comment">vi </span></span><span><span class="hljs-comment">/</span></span><span><span class="hljs-comment">var</span></span><span><span class="hljs-comment">/www/</span></span><span><span class="hljs-comment">html</span></span><span><span class="hljs-comment">/</span></span><span class="hljs-comment">info</span><span><span class="hljs-comment">.</span></span><span class="hljs-comment">php</span></pre>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">按 “i” 键进行编辑，输入：</p>
+
+                                <pre class="hljs xml"><span><span class="php"><span class="hljs-meta">&lt;?</span></span></span><span class="php"><span class="hljs-meta">php</span>
+</span><span><span class="php">phpinfo</span></span><span><span class="php">();</span></span><span class="php">
+</span><span><span class="php"><span class="hljs-meta">?&gt;</span></span></span></pre>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">编辑完毕，按 “ESC” 键退出编辑模式，接着输入：</p>
+
+                                <pre class="hljs css"><span><span class="hljs-selector-pseudo">:</span></span><span class="hljs-selector-pseudo">wq</span></pre>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">然后回车，即保存并退出。</p>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">　　此时你可以访问你的站点地址，例如 “http://192.168.1.2/info.php”，查看是否能看到相关的 PHP 信息。</p>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;"><img alt="" src="http://www.centoscn.com/uploads/allimg/130331/2106491200-1.jpg"></p>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">　　看到这样的图，就说明 PHP 安装成功了。</p>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;"><strong>五、将 PHP 模块和 MySQL 模块关联起来</strong></p>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">　　还需要将 PHP 和 MySQL 关联起来，才能正常工作。搜索模块：</p>
+
+                                <pre class="hljs coffeescript"><span>[</span>root@localhost <span>~]</span><span class="hljs-comment"># yum search php</span></pre>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">安装相关模块：</p>
+
+                                <pre class="hljs coffeescript"><span>[</span>root@localhost <span>~]</span><span class="hljs-comment"># yum install php</span><span><span class="hljs-comment">-</span></span><span class="hljs-comment">mysql php</span><span><span class="hljs-comment">-</span></span><span class="hljs-comment">gd php</span><span><span class="hljs-comment">-</span></span><span class="hljs-comment">imap php</span><span><span class="hljs-comment">-</span></span><span class="hljs-comment">ldap php</span><span><span class="hljs-comment">-</span></span><span class="hljs-comment">odbc php</span><span><span class="hljs-comment">-</span></span><span class="hljs-comment">pear php</span><span><span class="hljs-comment">-</span></span><span class="hljs-comment">xml php</span><span><span class="hljs-comment">-</span></span><span class="hljs-comment">xmlrpc</span></pre>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">需要重启 Apache 模块才能生效：</p>
+
+                                <pre class="hljs coffeescript"><span>[</span>root@localhost <span>~]</span><span class="hljs-comment"># </span><span><span class="hljs-comment">/etc/i</span></span><span class="hljs-comment">nit</span><span><span class="hljs-comment">.</span></span><span><span class="hljs-comment">d</span></span><span><span class="hljs-comment">/</span></span><span class="hljs-comment">httpd restart</span></pre>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">　　再次刷新刚才建立的 “info.php” 页面，往下拉找到相关 MySQL 模块，看是否检测到相关信息。</p>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;"><img alt="" src="http://www.centoscn.com/uploads/allimg/130331/21064962I-2.jpg" width="560"></p>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">如果看到如上图相关信息，则说明 MySQL 工作正常了。</p>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;"><strong>六、总结</strong></p>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">　　到这里就结束了，本文阐述了在 CentOS 6.0 系统下 LAMP 组件（Apache+MySQL+PHP） 的详细安装步骤，可以让更多新手熟悉服务器配置环境。</p>
+
+                                <p style="color:rgb(51,51,51);font-family:Verdana, Arial, Tahoma;">　　但是到这里，还只是将环境配置完毕，很多东西还有欠缺，而且还是一些重要的问题，例如目录的权限配置问题，或者是管理上的问题，像建立 FTP 等。这些内容随后会慢慢谈到。</p><p></p>
+                            </div>
+                            <div class="media-footer">
+                                <ul class="list-inline mb-20">
+                                    <li><a class="comments" data-toggle="collapse" href="#comments-answer-1056" aria-expanded="false" aria-controls="comment-1056"><i class="fa fa-comment-o"></i> 0 条评论</a></li>
+                                    <li class="pull-right">
+                                        <button class="btn btn-sm btn-support btn-success" data-source_id="1056" data-source_type="answer" data-support_num="0"><i class="fa fa-thumbs-o-up"></i> 赞同</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="collapse widget-comments mb-20" id="comments-answer-1056" data-source_type="answer" data-source_id="1056">
+                                <div class="widget-comment-list"></div>
+                                <div class="widget-comment-form row">
+                                    <form class="col-md-12">
+                                        <div class="form-group">
+                                            <textarea name="content" placeholder="写下你的评论" class="form-control" id="comment-answer-content-1056"></textarea>
+                                        </div>
+                                    </form>
+                                    <div class="col-md-12 text-right">
+                                        <a href="#" class="text-muted collapse-cancel" data-collapse_id="comments-answer-1056">取消</a>
+                                        <button type="submit" class="btn btn-primary btn-sm ml-10 comment-btn" id="answer-comment-1056-btn" data-token="P7N3KhfFb4xZslpAr0B865JG9MTtGWA05FL82IPU" data-source_id="1056" data-source_type="answer" data-to_user_id="0">提交评论</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+
+                    </div>
+
+                </div>
+                <div class="widget-answer-form mt-15">
+
+                    <form name="answerForm" id="answer_form" action="#/answer/store" method="post" class="editor-wrap">
+                        <input type="hidden" id="answer_token" name="_token" value="P7N3KhfFb4xZslpAr0B865JG9MTtGWA05FL82IPU">
+                        <input type="hidden" value="1064" id="question_id" name="question_id">
+                        <div class="form-group  ">
+                            <div id="answer_editor" style="display: none;"></div>
+                            <!--<textarea name="text" class="summernote" id="contents" title="Contents"></textarea>-->
+                        </div>
+
+                        <div id="answerSubmit" class="mt-15 clearfix">
+                            <div class="checkbox pull-left">
+                                <label><input type="checkbox" id="attendTo" name="followed" value="1" checked="">关注该问题</label>
+                            </div>
+                            <div class="pull-right">
+                                <input type="hidden" id="answer_editor_content" name="content" value="<p><br></p>">
+                                <button type="submit" class="btn btn-primary pull-right">提交回答</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="col-xs-12 col-md-3 side">
+                <div class="widget-box">
+                    <ul class="widget-action list-unstyled">
+                        <li>
+                            <button type="button" id="follow-button" class="btn btn-success btn-sm" data-source_type="question" data-source_id="1064" data-show_num="true" data-toggle="tooltip" data-placement="right" title="" data-original-title="关注后将获得更新提醒">关注</button>
+                            <strong id="follower-num">1</strong> 关注
+                        </li>
+                        <li>
+                            <button id="collect-button" class="btn btn-default btn-sm" data-source_type="question" data-source_id="1064"> 收藏</button>
+                            <strong id="collection-num">0</strong> 收藏，<strong class="no-stress">107</strong> 浏览
+                        </li>
+                        <li>
+                            <i class="fa fa-clock-o"></i>
+                            <a href="#/people/8" target="_blank">柯南@￥</a>
+                            提出于 2017-01-05 15:46</li>
+                    </ul>
+                </div>
+                <div class="widget-box">
+                    <h2 class="h4 widget-box__title">相似问题</h2>
+                    <ul class="widget-links list-unstyled list-text">
+                        <li class="widget-links-item">
+                            <a title="Permission denied (publickey,gssapi-keyex,gssapi-with-mic)" href="#/question/1015">Permission denied (publickey,gssapi-keyex,gssapi-with-mic)</a>
+                            <small class="text-muted">1 回答</small>
+                        </li>
+                        <li class="widget-links-item">
+                            <a title="我在ssh配置了免密码登录，但是登录时提示还需要密码" href="#/question/1014">我在ssh配置了免密码登录，但是登录时提示还需要密码</a>
+                            <small class="text-muted">1 回答</small>
+                        </li>
+                        <li class="widget-links-item">
+                            <a title="500 OOPS: cannot change directory:/home/" href="#/question/1004">500 OOPS: cannot change directory:/home/</a>
+                            <small class="text-muted">1 回答</small>
+                        </li>
+                        <li class="widget-links-item">
+                            <a title="vmvare安装centos6.x后虚拟机网络设置问题" href="#/question/1000">vmvare安装centos6.x后虚拟机网络设置问题</a>
+                            <small class="text-muted">1 回答</small>
+                        </li>
+                        <li class="widget-links-item">
+                            <a title="centos下yum命令" href="#/question/968">centos下yum命令</a>
+                            <small class="text-muted">1 回答</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="appendReward" tabindex="-1" role="dialog" aria-labelledby="appendRewardLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title" id="appendModalLabel">追加悬赏</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-success" role="alert" id="rewardAlert">
+                            <i class="fa fa-exclamation-circle"></i> 提高悬赏，以提高问题的关注度！
+                        </div>
+
+                        <form class="form-inline" id="rewardForm" action="#/question/1064/appendReward" method="post">
+                            <input type="hidden" name="_token" value="P7N3KhfFb4xZslpAr0B865JG9MTtGWA05FL82IPU">
+                            <div class="form-group">
+                                <label for="reward">追加</label>
+                                <select class="form-control" name="coins" id="question_coins">
+                                    <option value="3" selected="">3</option><option value="5">5</option><option value="10">10</option><option value="15">15</option><option value="30">30</option><option value="50">50</option><option value="80">80</option><option value="100">100</option>
+                                </select> 个金币
+                            </div>
+                            <div class="form-group">
+                                （您目前共有 <span class="text-gold">1</span> 个金币）
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" id="appendRewardSubmit">确认追加</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="adoptAnswer" tabindex="-1" role="dialog" aria-labelledby="adoptAnswerLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title" id="adoptModalLabel">采纳回答</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-warning" role="alert" id="adoptAnswerAlert">
+                            <i class="fa fa-exclamation-circle"></i> 确认采纳该回答为最佳答案？
+                        </div>
+                        <blockquote id="answer_quote"></blockquote>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" id="adoptAnswerSubmit">采纳该回答</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        <ul class="list-unstyled list-inline">
+            <li>友情链接</li>
+            <li><a target="_blank" href="http://www.ibeifeng.com">北风</a></li>
+            <li><a target="_blank" href="http://www.baidu.com">百度</a></li>
+            <li><a target="_blank" href="http://www.google.com">谷歌</a></li>
+        </ul>
+        <div class="text-center">
+            <a href="#">关于我们</a>
+            <a href="#">联系我们</a>
+            <a href="#">Powered by Leslie 1.0</a>
+        </div>
+        <div class="copyright mt-10">
+            Copyright © 2017 <a href="#">程序猿问答</a> All Rights Reserved. <a href="#" target="_blank">Leslie</a> 版权所有
+        </div>
+        <div class="copyright mt-10">
+            <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备11111111号-1</a>
+        </div>
+    </div>
+</footer>
+<div class="modal fade" id="sendTo_message_model" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">发送私信</h4>
+            </div>
+            <div class="modal-body">
+                <form name="messageForm" id="sendTo_message_form">
+                    <input type="hidden" name="_token" value="f5Zj2qrN8CA7OzwQTbq0ytgPvmU9GaA7z3cvT15w">
+                    <input type="hidden" id="to_user_id" name="to_user_id" value="0">
+                    <div class="form-group">
+                        <label for="to_user_name" class="control-label">发给:</label>
+                        <span id="to_user_name"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="control-label">内容:</label>
+                        <textarea class="form-control" id="message-text" name="content"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="sendTo_submit">发送</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./static/components/jquery/dist/jquery.js"></script>
+<script src="./static/components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="./js/global.js"></script>
+<script src="./static/components/summernote/dist/summernote.js"></script>
+<script src="./static/components/summernote/lang/summernote-zh-CN.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        /*问题悬赏*/
+        $("#appendRewardSubmit").click(function(){
+            var user_total_conis = '3';
+            var reward = $("#question_coins").val();
+
+            if(reward>parseInt(user_total_conis)){
+                $("#rewardAlert").attr('class','alert alert-warning');
+                $("#rewardAlert").html('金币数不能大于'+user_total_conis);
+            }else{
+                $("#rewardAlert").empty();
+                $("#rewardAlert").attr('class','');
+                $("#rewardForm").submit();
+            }
+        });
+
+        /*回答编辑器初始化*/
+        $('#answer_editor').summernote({
+            lang: 'zh-CN',
+            height: 160,
+            placeholder:'撰写答案',
+            toolbar: [ ['common', ['style','bold','ol','link','picture','clear','fullscreen']] ],
+            callbacks: {
+                onChange:function (contents, $editable) {
+                    var code = $(this).summernote("code");
+                    $("#answer_editor_content").val(code);
+                },
+                onImageUpload:function(files) {
+                    upload_editor_image(files[0],'answer_editor');
+                }
+            }
+        });
+
+        /*评论提交*/
+        $(".comment-btn").click(function(){
+            var source_id = $(this).data('source_id');
+            var source_type = $(this).data('source_type');
+            var to_user_id = $(this).data('to_user_id');
+            var token = $(this).data('token');
+            var content = $("#comment-"+source_type+"-content-"+source_id).val();
+            add_comment(token,source_type,source_id,content,to_user_id);
+            $("#comment-content-"+source_id+"").val('');
+        });
+
+
+        $(".widget-comments").on('show.bs.collapse', function () {
+            load_comments($(this).data('source_type'),$(this).data('source_id'));
+        });
+
+        $(".widget-comments").on('hide.bs.collapse', function () {
+            clear_comments($(this).data('source_type'),$(this).data('source_id'));
+        });
+
+
+        /*收藏问题或文章*/
+        $("#collect-button").click(function(){
+            $("#collect-button").button('loading');
+            var source_type = $(this).data('source_type');
+            var source_id = $(this).data('source_id');
+            var collection_num = $("#collection-num").html();
+            $.get('/collect/'+source_type+'/'+source_id,function(msg){
+                $("#collect-button").removeClass('disabled');
+                $("#collect-button").removeAttr('disabled');
+                if(msg=='collected'){
+                    $("#collect-button").html('已收藏');
+                    $("#collection-num").html(parseInt(collection_num)+1);
+                }else{
+                    $("#collect-button").html('收藏');
+                    $("#collection-num").html(parseInt(collection_num)-1);
+                }
+            });
+        });
+
+        /*采纳回答为最佳答案*/
+        $(".adopt-answer").click(function(){
+            var answer_id = $(this).data('answer_id');
+            $("#adoptAnswerSubmit").attr('data-answer_id',answer_id);
+            $("#answer_quote").html($(this).data('answer_content'));
+        });
+
+        $("#adoptAnswerSubmit").click(function(){
+            document.location = "/answer/adopt/"+$(this).data('answer_id');
+        });
+    });
+</script>
+<style type="text/css">
+    .content a{text-decoration:underline;}
+    .text-fmt a{text-decoration:underline;}
+</style>
+</body>
+</html>
