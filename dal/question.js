@@ -12,10 +12,12 @@ var q = require('q');
  * 获取分类列表
  * @param condition
  */
-exports.getList = function (condition) {
+exports.getList = function (condition, limit, isDesc) {
+    idDesc = isDesc ? isDesc : '1';
+    limit = limit ? limit : 0;
     db.Question.find(condition, function (err, docs) {
         Response.msg(200, true, '获取成功', docs);
-    }).populate('user_id', 'truename').sort({"create_time": -1});
+    }).populate('user_id', 'truename').sort({"create_time": isDesc}).limit(limit);
 };
 
 exports.getOne = function (condition) {

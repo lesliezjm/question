@@ -33,45 +33,9 @@
             <div class="col-md-6">
                 <h4 class="widget-box-title">最新问题 <a href="#/questions/newest" target="_blank" title="更多">»</a> </h4>
                 <ul class="widget-links list-unstyled">
-                    <li class="widget-links-item">
-                        <a title="CentOS安装LAMP(Apache+MySQL+PHP)" target="_blank" href="#/question/1064">CentOS安装LAMP(Apache+MySQL+PHP)</a>
-                        <small class="text-muted">1 回答</small>
-                    </li>
-                    <li class="widget-links-item">
-                        <a title="mac中安装mysql的root密码在哪?" target="_blank" href="#/question/1063">mac中安装mysql的root密码在哪?</a>
-                        <small class="text-muted">1 回答</small>
-                    </li>
-                    <li class="widget-links-item">
-                        <a title="python中的flask中app=Flask(__name__)" target="_blank" href="#/question/1062">python中的flask中app=Flask(__name__)</a>
-                        <small class="text-muted">0 回答</small>
-                    </li>
-                    <li class="widget-links-item">
-                        <a title="Mac Python 无法导入Opencv问题" target="_blank" href="#/question/1061">Mac Python 无法导入Opencv问题</a>
-                        <small class="text-muted">1 回答</small>
-                    </li>
-                    <li class="widget-links-item">
-                        <a title="Opencv3在MAC 中安装问题" target="_blank" href="#/question/1060">Opencv3在MAC 中安装问题</a>
-                        <small class="text-muted">1 回答</small>
-                    </li>
-                    <li class="widget-links-item">
-                        <a title="iOS开发，怎么生成中间带图片的二维码？" target="_blank" href="#/question/1059">iOS开发，怎么生成中间带图片的二维码？</a>
-                        <small class="text-muted">1 回答</small>
-                    </li>
-                    <li class="widget-links-item">
-                        <a title="python中enumerate函数什么意思" target="_blank" href="#/question/1058">python中enumerate函数什么意思</a>
-                        <small class="text-muted">1 回答</small>
-                    </li>
-                    <li class="widget-links-item">
-                        <a title="数据的抓取怎样抓取？" target="_blank" href="#/question/1057">数据的抓取怎样抓取？</a>
-                        <small class="text-muted">0 回答</small>
-                    </li>
-                    <li class="widget-links-item">
-                        <a title="html的frame详解" target="_blank" href="#/question/1056">html的frame详解</a>
-                        <small class="text-muted">1 回答</small>
-                    </li>
-                    <li class="widget-links-item">
-                        <a title="eclipse maven编译项目-Dmaven.multiModuleProjectDirectory system propery is not set. Check $M2_HOME environment variable and mvn script match." target="_blank" href="#/question/1055">eclipse maven编译项目-Dmaven.multiModuleProjectDirectory system propery is not set. Check $M2_HOME environment variable and mvn script match.</a>
-                        <small class="text-muted">1 回答</small>
+                    <li class="widget-links-item" ng-repeat="item in questionList">
+                        <a title="{{item.title}}" target="_blank" ui-sref="question({id:item._id})">{{item.title}}</a>
+                        <small class="text-muted">{{item.answer_num}} 回答</small>
                     </li>
 
                 </ul>
@@ -79,7 +43,7 @@
             <div class="col-md-6">
                 <h4 class="widget-box-title">悬赏问题 <a href="#/questions/reward" target="_blank" title="更多">»</a></h4>
 
-                <ul class="widget-links list-unstyled">
+                <!--<ul class="widget-links list-unstyled">
                     <li class="widget-links-item">
                         <span class="text-gold"><i class="fa fa-database"></i> 3</span>
                         <a target="_blank" title="文本编辑器" href="#/question/1031">文本编辑器</a>
@@ -110,7 +74,7 @@
                 </li><li class="widget-links-item">
                     <span class="text-gold"><i class="fa fa-database"></i> 15</span>
                     <a target="_blank" title="javascript解决跨域问题中的JSONP的原理是什么？" href="#/question/810">javascript解决跨域问题中的JSONP的原理是什么？</a>
-                </li></ul>
+                </li></ul>-->
             </div>
         </div>
     </div>

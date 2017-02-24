@@ -92,8 +92,12 @@ app.run(['$http', '$rootScope', function ($http, $rootScope) {
     }
 }]);
 
-app.controller('index.ctrl', ['$rootScope', function ($rootScope) {
-
+app.controller('index.ctrl', ['$rootScope','$http', '$scope',function ($rootScope,$http,$scope) {
+    // 获取最新的10个问题
+    $http.post('/question/getlist',{order: 'desc', limit: 10})
+        .then(function (xhr) {
+            $scope.questionList = xhr.data.data;
+        })
 }]);
 
 app.controller('question.ctrl', ['$sce', '$scope', '$rootScope', '$stateParams', '$http', '$state', function ($sce, $scope, $rootScope, $stateParams, $http, $state) {

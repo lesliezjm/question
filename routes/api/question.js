@@ -14,11 +14,12 @@ router.post('/', function (req, res, next) {
     }else if(req.param('name')){
         condition = {cname:req.param('name')}
     }
-    questionModel.getList(condition);
+    questionModel.getList(condition, 20, 'desc');
 });
 
 router.post('/getlist', function (req, res, next) {
-    questionModel.getList();
+    var data = req.body;
+    questionModel.getList({}, data.limit, data.order);
 });
 
 router.post('/create', function (req, res, next) {
