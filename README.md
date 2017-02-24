@@ -1,5 +1,8 @@
-# question
+question 
+=========
+
 > 程序猿问答项目
+
 
 ## 安装
 clone
@@ -60,3 +63,21 @@ question  项目目录
 ├─package.json      npm包管理
 ├─README.md         
 ```
+
+注册页面
+![注册页面](./views/register.png)
+
+登录页面
+![登录页面](./views/login.png)
+
+首页
+![首页](./views/index.png)
+
+问题列表
+![首页](./views/question.png)
+
+我要提问
+![首页](./views/ask.png)
+
+回答
+![首页](./views/answer.png)
